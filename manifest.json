@@ -1,0 +1,27 @@
+{
+    "name": "Get back to work !",
+    "description": "Simple page blocker",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "images/work-in-progress.png",
+            "32": "images/work-in-progress.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "images/work-in-progress.png",
+        "32": "images/work-in-progress.png",
+        "48": "images/work-in-progress.png",
+        "128": "images/work-in-progress.png"
+    }
+}
