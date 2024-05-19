@@ -16,7 +16,7 @@
             "16": "images/work-in-progress.png",
             "32": "images/work-in-progress.png"
         },
-        "default_popup": "popup.html"
+        "default_popup": "./popup/popup.html"
     },
     "icons": {
         "16": "images/work-in-progress.png",
