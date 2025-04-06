@@ -366,6 +366,41 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary-hover);
         }
+
+        /* ============================
+       FOOTER STYLES
+    ============================ */
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .creator-link {
+            color: var(--primary-color);
+            font-size: 18px;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .creator-link:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .creator-link i {
+            margin-right: 4px;
+            font-size: 12px;
+        }
+
+        .all-rights {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -412,6 +447,16 @@
 
         <div class="site-list" id="whitelistContainer">
             <!-- Whitelist sites will be added here -->
+        </div>
+
+        <!-- Creator Footer -->
+        <div class="footer">
+            <a href="about.html" class="creator-link">
+                About Focus Mode
+            </a>
+            <div class="all-rights">
+                &copy; 2025 Focus Mode - All Rights Reserved
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Focus Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* ============================
+       CSS VARIABLES
+    ============================ */
+        :root {
+            --primary-color: #06b082;
+            --primary-hover: #169976;
+            --primary-red: #B31B1B;
+            --dark-color: #1e1e1e;
+            --dark-gray: #222222;
+            --text-color: #000000;
+            --text-light: #555555;
+            --bg-color: #f6f6f6;
+            --border-color: #E0E0E0;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --border-radius: 4px;
+        }
+
+        /* ============================
+       RESET & BASE STYLES
+    ============================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 340px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        /* ============================
+       HEADER STYLES
+    ============================ */
+        .header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .logo-icon {
+            margin-right: 8px;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button i {
+            margin-right: 4px;
+        }
+
+        /* ============================
+       CONTENT CONTAINER
+    ============================ */
+        .content {
+            padding: 20px;
+        }
+
+        /* ============================
+       ABOUT SECTION STYLES
+    ============================ */
+        .profile-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            margin: 0 5px;
+        }
+
+        .linkedin {
+            background-color: #0A66C2;
+            color: white;
+        }
+
+        .linkedin:hover {
+            background-color: #0959a8;
+            transform: translateY(-2px);
+        }
+
+        .github {
+            background-color: #24292e;
+            color: white;
+        }
+
+        .github:hover {
+            background-color: #1b1f23;
+            transform: translateY(-2px);
+        }
+
+        .social-link i {
+            margin-right: 6px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button class="back-button" onclick="window.history.back();">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <h1><i class="fas fa-bullseye logo-icon"></i> About</h1>
+    </div>
+
+    <div class="content">
+        <div class="profile-card">
+            <img src="pedro.png" alt="Image of Pedro" class="profile-image">
+            <h2 class="profile-name">Pedro</h2>
+            <p class="profile-title">Senior Developer</p>
+
+            <div class="social-links">
+                <a href="https://github.com/pedrobertao" target="_blank" class="social-link github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <h3 style="margin-bottom: 10px;">About Focus Mode</h3>
+            <p style="text-align: left; line-height: 1.5;">
+                Focus Mode is a browser extension designed to help you stay productive by blocking distracting websites.
+                You can customize your whitelist to allow only the sites you need during work sessions.
+            </p>
+        </div>
+
+        <div class="footer">
+            &copy; 2025 Focus Mode - All Rights Reserved
+        </div>
+    </div>
+</body>
+
+</html>
