@@ -1,27 +1,39 @@
 {
-    "name": "Get back to work !",
-    "description": "Simple page blocker",
-    "version": "1.0",
     "manifest_version": 3,
+    "name": "__MSG_appName__",
+    "version": "1.0",
+    "description": "__MSG_appDesc__",
+    "default_locale": "en",
+    "permissions": [
+        "storage",
+        "tabs",
+        "webNavigation"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": [
-        "storage",
-        "activeTab",
-        "tabs"
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "blocked.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
     ],
-    "action": {
-        "default_icon": {
-            "16": "images/work-in-progress.png",
-            "32": "images/work-in-progress.png"
-        },
-        "default_popup": "./popup/popup.html"
-    },
-    "icons": {
-        "16": "images/work-in-progress.png",
-        "32": "images/work-in-progress.png",
-        "48": "images/work-in-progress.png",
-        "128": "images/work-in-progress.png"
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
     }
 }

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title data-i18n="focusModeActive">Focus Mode Active</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        :root {
+            /* Main Colors */
+            --primary-color: #1DCD9F;
+            --primary-hover: #169976;
+            --light-teal: #E0F7F1;
+
+            /* Supporting Colors */
+            --dark-color: #000000;
+            --dark-gray: #222222;
+            --text-color: #000000;
+            --text-light: #555555;
+            --bg-color: #F8F8F8;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(135deg, var(--light-teal) 25%, transparent 25%) -10px 0,
+                linear-gradient(225deg, var(--light-teal) 25%, transparent 25%) -10px 0,
+                linear-gradient(315deg, var(--light-teal) 25%, transparent 25%),
+                linear-gradient(45deg, var(--light-teal) 25%, transparent 25%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 700px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-top: 5px solid var(--primary-color);
+            overflow: hidden;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .title-icon {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-right: 12px;
+        }
+
+        h1 {
+            color: var(--dark-color);
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .illustration-container {
+            margin: 30px -40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: calc(100% + 80px);
+        }
+
+        .working-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 24px;
+            color: var(--primary-color);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .icon1 {
+            top: 10px;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .icon2 {
+            top: 30%;
+            right: 12%;
+            animation-delay: 0.5s;
+        }
+
+        .icon3 {
+            bottom: 15px;
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .message-box {
+            background-color: var(--light-teal);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .message-box p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .btn-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(29, 205, 159, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <i class="fas fa-ban title-icon"></i>
+            <h1 data-i18n="focusModeActive">Focus Mode Active</h1>
+        </div>
+
+        <p data-i18n="siteBlocked">This site is currently blocked to help you focus on your work.</p>
+
+        <div class="illustration-container">
+            <!-- Working image -->
+            <img src="working.png" alt="Focus on work" class="working-image">
+
+            <!-- Floating icons -->
+            <i class="fas fa-clock floating-icon icon1"></i>
+            <i class="fas fa-check-circle floating-icon icon2"></i>
+            <i class="fas fa-thumbs-up floating-icon icon3"></i>
+        </div>
+
+        <div class="message-box">
+            <p data-i18n="accessInfo">You can access this site by disabling Focus Mode or adding it to your whitelist.
+            </p>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-primary" id="disableButton">
+                <span data-i18n="disableFocusMode">Disable Focus Mode</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="blocked.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title data-i18n="appName">Focus Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* ============================
+       CSS VARIABLES
+    ============================ */
+        :root {
+            --primary-color: #06b082;
+            --primary-hover: #169976;
+            --primary-red: #B31B1B;
+            --dark-color: #1e1e1e;
+            --dark-gray: #222222;
+            --text-color: #000000;
+            --text-light: #555555;
+            --bg-color: #f6f6f6;
+            --border-color: #E0E0E0;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --border-radius: 4px;
+        }
+
+        /* ============================
+       RESET & BASE STYLES
+    ============================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 340px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        /* ============================
+       HEADER STYLES
+    ============================ */
+        .header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .logo-icon {
+            margin-right: 8px;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        /* ============================
+       CONTENT CONTAINER
+    ============================ */
+        .content {
+            padding: 20px;
+        }
+
+        /* ============================
+       SECTION HEADERS
+    ============================ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header h2 i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+
+        /* ============================
+       TOGGLE SWITCH STYLES
+    ============================ */
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .switch-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .working-icon {
+            color: var(--primary-red);
+        }
+
+        .not-working-icon {
+            color: var(--primary-color);
+        }
+
+        .status-text {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #CCC;
+            transition: var(--transition);
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: var(--transition);
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(24px);
+        }
+
+        /* ============================
+       INPUT SECTION STYLES
+    ============================ */
+        .input-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px 14px 14px 40px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: #FAFAFA;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(29, 205, 159, 0.2);
+            background-color: white;
+        }
+
+        input[type="text"]::placeholder {
+            color: #999;
+        }
+
+        .error {
+            color: #e74c3c;
+            margin-top: 8px;
+            font-size: 13px;
+            display: none;
+            padding-left: 5px;
+            font-weight: 500;
+        }
+
+        /* ============================
+       BUTTON STYLES
+    ============================ */
+        .add-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .add-btn i {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .add-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(29, 205, 159, 0.25);
+        }
+
+        .add-btn:active {
+            transform: translateY(0);
+        }
+
+        .delete-btn {
+            background-color: transparent;
+            color: var(--dark-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .delete-btn:hover {
+            background-color: rgba(29, 205, 159, 0.1);
+            color: var(--primary-color);
+        }
+
+        /* ============================
+       SITE LIST STYLES
+    ============================ */
+        .site-list {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            max-height: 180px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .site-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .site-item:last-child {
+            border-bottom: none;
+        }
+
+        .site-domain {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .site-icon {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        /* ============================
+       EMPTY STATE STYLES
+    ============================ */
+        .empty-state {
+            padding: 20px;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .empty-state i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--border-color);
+        }
+
+        /* ============================
+       CUSTOM SCROLLBAR
+    ============================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: var(--border-radius);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            opacity: 0.7;
+            border-radius: var(--border-radius);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-hover);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <h1><i class="fas fa-bullseye logo-icon"></i> <span data-i18n="appName">Focus Mode</span></h1>
+    </div>
+
+    <div class="content">
+        <!-- Working mode toggle -->
+        <div class="switch-container">
+            <div class="switch-label">
+                <i id="statusIcon" class="fas fa-pause-circle status-icon not-working-icon"></i>
+                <span class="status-text" id="statusText" data-i18n="startWorking">Start Working</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="workingModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Add new site section -->
+        <div class="section-header">
+            <h2><i class="fas fa-plus-circle"></i> <span data-i18n="addNewSite">Add New Site</span></h2>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <i class="fas fa-globe"></i>
+                <input type="text" id="newSiteInput" data-i18n-placeholder="addSitePlaceholder"
+                    placeholder="Add site (e.g., example.com)" autocomplete="off" autocorrect="off" spellcheck="false">
+            </div>
+            <div class="error" id="inputError"></div>
+            <button class="add-btn" id="addSiteButton">
+                <i class="fas fa-plus"></i> <span data-i18n="addToWhitelist">Add to Whitelist</span>
+            </button>
+        </div>
+
+        <!-- Whitelist section -->
+        <div class="section-header">
+            <h2><i class="fas fa-list"></i> <span data-i18n="whitelistedSites">Whitelisted Sites</span></h2>
+        </div>
+
+        <div class="site-list" id="whitelistContainer">
+            <!-- Whitelist sites will be added here -->
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

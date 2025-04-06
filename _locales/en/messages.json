@@ -1,0 +1,70 @@
+{
+    "appName": {
+        "message": "Focus Mode",
+        "description": "The name of the extension"
+    },
+    "appDesc": {
+        "message": "Block distracting websites while you work",
+        "description": "The description of the extension"
+    },
+    "startWorking": {
+        "message": "Start Working",
+        "description": "Button text when focus mode is not active"
+    },
+    "stopWorking": {
+        "message": "Stop Working",
+        "description": "Button text when focus mode is active"
+    },
+    "whitelistedSites": {
+        "message": "Whitelisted Sites",
+        "description": "Title for whitelisted sites section"
+    },
+    "addSitePlaceholder": {
+        "message": "Add site (e.g., example.com)",
+        "description": "Placeholder for the site input field"
+    },
+    "addToWhitelist": {
+        "message": "Add to Whitelist",
+        "description": "Button text to add site to whitelist"
+    },
+    "noSitesAdded": {
+        "message": "No sites added yet",
+        "description": "Message when no sites are in whitelist"
+    },
+    "addNewSite": {
+        "message": "Add New Site",
+        "description": "Heading for adding a new site section"
+    },
+    "websiteUrl": {
+        "message": "Website URL:",
+        "description": "Label for website URL input field"
+    },
+    "enterDomain": {
+        "message": "Please enter a domain",
+        "description": "Error message for empty input"
+    },
+    "enterValidDomain": {
+        "message": "Please enter a valid domain (e.g., example.com)",
+        "description": "Error message for invalid domain"
+    },
+    "siteAlreadyAdded": {
+        "message": "This site is already in your whitelist",
+        "description": "Error message for duplicate site"
+    },
+    "focusModeActive": {
+        "message": "Focus Mode Active",
+        "description": "Title for blocked page"
+    },
+    "siteBlocked": {
+        "message": "This site is currently blocked to help you focus on your work.",
+        "description": "Message on blocked page"
+    },
+    "accessInfo": {
+        "message": "You can access this site by disabling Focus Mode or adding it to your whitelist.",
+        "description": "Information on blocked page"
+    },
+    "disableFocusMode": {
+        "message": "Disable Focus Mode",
+        "description": "Button text to disable focus mode"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "appName": {
+        "message": "Modo Foco",
+        "description": "The name of the extension"
+    },
+    "appDesc": {
+        "message": "Bloqueie sites distrativos enquanto você trabalha",
+        "description": "The description of the extension"
+    },
+    "workingMode": {
+        "message": "Estou Trabalhando",
+        "description": "Text displayed when focus mode is active"
+    },
+    "notWorkingMode": {
+        "message": "Não Estou Trabalhando",
+        "description": "Text displayed when focus mode is inactive"
+    },
+    "whitelistedSites": {
+        "message": "Sites Permitidos",
+        "description": "Title for whitelisted sites section"
+    },
+    "whitelistedDescription": {
+        "message": "Estes sites permanecerão acessíveis quando o Modo Foco estiver ativo:",
+        "description": "Description for whitelisted sites"
+    },
+    "addSitePlaceholder": {
+        "message": "Adicionar site (ex., exemplo.com.br)",
+        "description": "Placeholder for the site input field"
+    },
+    "addToWhitelist": {
+        "message": "Adicionar aos Permitidos",
+        "description": "Button text to add site to whitelist"
+    },
+    "noSitesAdded": {
+        "message": "Nenhum site adicionado ainda",
+        "description": "Message when no sites are in whitelist"
+    },
+    "enterDomain": {
+        "message": "Por favor, digite um domínio",
+        "description": "Error message for empty input"
+    },
+    "enterValidDomain": {
+        "message": "Por favor, digite um domínio válido (ex., exemplo.com.br)",
+        "description": "Error message for invalid domain"
+    },
+    "siteAlreadyAdded": {
+        "message": "Este site já está na sua lista de permitidos",
+        "description": "Error message for duplicate site"
+    },
+    "focusModeActive": {
+        "message": "Modo Foco Ativo",
+        "description": "Title for blocked page"
+    },
+    "siteBlocked": {
+        "message": "Este site está bloqueado para ajudá-lo a se concentrar no seu trabalho.",
+        "description": "Message on blocked page"
+    },
+    "accessInfo": {
+        "message": "Você pode acessar este site desativando o Modo Foco ou adicionando-o à sua lista de permitidos.",
+        "description": "Information on blocked page"
+    },
+    "disableFocusMode": {
+        "message": "Desativar Modo Foco",
+        "description": "Button text to disable focus mode"
+    }
+}
